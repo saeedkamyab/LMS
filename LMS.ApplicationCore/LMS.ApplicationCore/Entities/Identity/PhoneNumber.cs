@@ -13,8 +13,11 @@ namespace LMS.ApplicationCore.Entities.Identity
     {
         public string Title { get; set; } = string.Empty;
         public string Number { get; set; } = string.Empty;
+
+        #region Relations
         public Guid PersonId { get; set; }
         [ForeignKey(nameof(PersonId))]
-        public Person? Person { get; set; } 
+        public Person? Person { get; set; }
+        #endregion
     }
 }
