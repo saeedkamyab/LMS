@@ -1,6 +1,8 @@
 ﻿using LMS.ApplicationCore.Entities.Common;
+using LMS.ApplicationCore.Entities.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +11,15 @@ namespace LMS.ApplicationCore.Entities.Education
 {
     public class TermCourse:BaseEntity
     {
-
+        public string Title { get; set; } = string.Empty;
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
+        public int Days { get; set; }
+        public Guid TeacherId { get; set; }
+        [ForeignKey(nameof(TeacherId))]
+        public Teacher? Teacher { get; set; }
+        public Guid TermCourseTypeId { get; set; }
+        [ForeignKey(nameof(TermCourseTypeId))]
+        public TermCourseType? TermCourseType { get; set; }
     }
 }
