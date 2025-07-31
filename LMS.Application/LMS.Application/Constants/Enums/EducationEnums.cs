@@ -14,7 +14,12 @@ namespace LMS.Application.Constants.Enums
         PublicNormal = 3,
         PublicCompact = 4
     }
-
+    public enum TuitionPayType
+    {
+        None = 0,
+        Installment = 1,
+        Whole = 2
+    }
 
     [Flags]
     public enum WeekDays
