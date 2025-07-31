@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LMS.ApplicationCore", "LMS.ApplicationCore", "{6B955A4E-7CFE-41A1-B73F-B03AAFE0B3EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LMS.Application", "LMS.Application", "{7F5444BF-A563-4584-B80E-4F9179464F35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.ApplicationCore", "LMS.ApplicationCore\LMS.ApplicationCore\LMS.ApplicationCore.csproj", "{C9ACF3D5-641C-4B0F-95E8-D18FCA13BC6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Application", "LMS.Application\LMS.Application\LMS.Application.csproj", "{9FB49E74-E817-42E1-AFD2-4DC88F255008}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9ACF3D5-641C-4B0F-95E8-D18FCA13BC6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9ACF3D5-641C-4B0F-95E8-D18FCA13BC6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9ACF3D5-641C-4B0F-95E8-D18FCA13BC6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9ACF3D5-641C-4B0F-95E8-D18FCA13BC6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB49E74-E817-42E1-AFD2-4DC88F255008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB49E74-E817-42E1-AFD2-4DC88F255008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB49E74-E817-42E1-AFD2-4DC88F255008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB49E74-E817-42E1-AFD2-4DC88F255008}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B955A4E-7CFE-41A1-B73F-B03AAFE0B3EF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{7F5444BF-A563-4584-B80E-4F9179464F35} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C9ACF3D5-641C-4B0F-95E8-D18FCA13BC6A} = {6B955A4E-7CFE-41A1-B73F-B03AAFE0B3EF}
+		{9FB49E74-E817-42E1-AFD2-4DC88F255008} = {7F5444BF-A563-4584-B80E-4F9179464F35}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C434487-197F-493F-9202-42ABE85EF2AA}
+	EndGlobalSection
+EndGlobal
