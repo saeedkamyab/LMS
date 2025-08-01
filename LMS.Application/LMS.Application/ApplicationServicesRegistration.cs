@@ -1,5 +1,4 @@
-﻿using LMS.Application.Profiles;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace LMS.Application
