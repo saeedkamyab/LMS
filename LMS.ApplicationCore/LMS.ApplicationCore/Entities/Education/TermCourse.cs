@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMS.ApplicationCore.Entities.Education
 {
+    [Table("TermCourse", Schema = "Education")]
     public class TermCourse:BaseEntity
     {
         [StringLength(130)]

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMS.ApplicationCore.Entities.Education
 {
+    [Table("Register", Schema = "Education")]
     public class Register : BaseEntity
     {
         public byte TuitionPayType { get; set; }

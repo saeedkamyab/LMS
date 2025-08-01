@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMS.ApplicationCore.Entities.Finance
 {
+    [Table("PaymentTuition", Schema = "Finance")]
     public class PaymentTuition : BaseEntity
     {
         public DateTime PayDate { get; set; }

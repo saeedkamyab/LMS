@@ -1,8 +1,10 @@
 ﻿using LMS.ApplicationCore.Entities.Common;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMS.ApplicationCore.Entities.Identity
 {
+    [Table("Person", Schema = "Identity")]
     public class Person : BaseEntity
     {
         [StringLength(130)]

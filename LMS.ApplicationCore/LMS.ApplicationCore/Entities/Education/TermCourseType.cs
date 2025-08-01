@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMS.ApplicationCore.Entities.Education
 {
+    [Table("TermCourseType", Schema = "Education")]
     public class TermCourseType : BaseEntity
     {
         public byte ClassType { get; set; }

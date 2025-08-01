@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMS.ApplicationCore.Entities.Identity
 {
+    [Table("PhoneNumber", Schema = "Identity")]
     public class PhoneNumber : BaseEntity
     {
         public string Title { get; set; } = string.Empty;
