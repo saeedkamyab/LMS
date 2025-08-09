@@ -1,7 +1,9 @@
-﻿using LMS.ApplicationCore.Entities.Education;
+﻿using LMS.ApplicationCore.Entities.Common;
+using LMS.ApplicationCore.Entities.Education;
 using LMS.ApplicationCore.Entities.Finance;
 using LMS.ApplicationCore.Entities.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Xml;
 
 namespace LMS.Persistence
 {
@@ -27,9 +29,37 @@ namespace LMS.Persistence
         public DbSet<TermCourse> TermCourses { get; set; }
         public DbSet<TermCourseType> TermCourseTypes { get; set; }
         #endregion
+      
         #region Finance
         public DbSet<PaymentTuition> PaymentTuitions { get; set; }
 
         #endregion
+
+        public override int SaveChanges()
+        {
+            SetCreateUpdateDate();
+            return base.SaveChanges();
+        }
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            SetCreateUpdateDate();
+            return base.SaveChangesAsync(cancellationToken);
+        }
+        private void SetCreateUpdateDate()
+        {
+            var entries = ChangeTracker.Entries<BaseEntity>();
+
+            foreach (var entry in entries)
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Entity.CreateDate = DateTime.UtcNow;
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    entry.Entity.LastUpdate = DateTime.UtcNow;
+                }
+            }
+        }
     }
 }

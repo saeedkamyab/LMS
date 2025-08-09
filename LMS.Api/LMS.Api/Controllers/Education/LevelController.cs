@@ -28,7 +28,7 @@ namespace LMS.Api.Controllers.Education
         }
 
         //[HttpPost]
-        //public async Task<ActionResult> Post([FromBody] CreateStudent createStudent)
+        //public async Task<ActionResult> Create([FromBody] CreateStudent createStudent)
         //{
         //    var command = new CreateStudentCommandRequest { CreateStudentDto = createStudent };
         //    var response = await _mediator.Send(command);

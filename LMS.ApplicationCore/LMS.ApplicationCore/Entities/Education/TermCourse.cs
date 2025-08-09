@@ -24,6 +24,9 @@ namespace LMS.ApplicationCore.Entities.Education
         public Guid TermCourseTypeId { get; set; }
         [ForeignKey(nameof(TermCourseTypeId))]
         public TermCourseType? TermCourseType { get; set; }
+
+
+        public List<Register>? Registers { get; set; }
         #endregion
     }
 }
