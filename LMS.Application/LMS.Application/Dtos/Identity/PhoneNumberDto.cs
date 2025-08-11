@@ -1,7 +1,7 @@
 ﻿using LMS.Application.Dtos.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LMS.ApplicationCore.Dtos.Identity
+namespace LMS.Application.Dtos.Identity
 {
     public class PhoneNumberDto : BaseDto
     {
@@ -11,7 +11,7 @@ namespace LMS.ApplicationCore.Dtos.Identity
         #region Relations
         public Guid PersonId { get; set; }
         [ForeignKey(nameof(PersonId))]
-        public Person_DTO? Person { get; set; }
+        public PersonDto? Person { get; set; }
         #endregion
     }
 }

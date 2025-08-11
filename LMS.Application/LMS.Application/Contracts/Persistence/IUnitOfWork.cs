@@ -23,7 +23,7 @@ namespace LMS.Application.Contracts.Persistence
         #endregion
        
         #region Finance
-        IBaseRepository<PaymentTuitionDto> PaymentTuitionRepository { get; }
+        IBaseRepository<PaymentTuition> PaymentTuitionRepository { get; }
         #endregion
         Task<int> CommitAsync();
     }

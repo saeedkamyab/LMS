@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using LMS.ApplicationCore.Dtos.Education;
-using LMS.ApplicationCore.Dtos.Identity;
+using LMS.Application.Dtos.Education;
+using LMS.Application.Dtos.Identity;
+using LMS.Application.Dtos.Finance;
 using LMS.ApplicationCore.Entities.Education;
 using LMS.ApplicationCore.Entities.Finance;
 using LMS.ApplicationCore.Entities.Identity;
@@ -28,7 +29,7 @@ namespace LMS.Application.Profiles
 
 
             #region  FinanceMapping
-            CreateMap<PaymentTuitionDto, PaymentTuitionDto>().ReverseMap();
+            CreateMap<PaymentTuition, PaymentTuitionDto>().ReverseMap();
          
             #endregion
 

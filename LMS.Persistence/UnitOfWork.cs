@@ -33,7 +33,7 @@ namespace LMS.Persistence
 
         public IBaseRepository<TermCourseType> TermCourseTypeepository => throw new NotImplementedException();
 
-        public IBaseRepository<PaymentTuitionDto> PaymentTuitionRepository => throw new NotImplementedException();
+        public IBaseRepository<PaymentTuition> PaymentTuitionRepository => throw new NotImplementedException();
 
         public async Task<int> CommitAsync()
         {

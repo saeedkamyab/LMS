@@ -1,7 +1,8 @@
 ﻿using LMS.Application.Features.Queries.Requests.Education.Level;
-using LMS.ApplicationCore.Dtos.Education;
+using LMS.Application.Dtos.Education;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using LMS.Application.Features.Commands.Requests.Education.Level;
 namespace LMS.Api.Controllers.Education
 {
     [Route("api/[controller]")]
@@ -27,13 +28,13 @@ namespace LMS.Api.Controllers.Education
             return result;
         }
 
-        //[HttpPost]
-        //public async Task<ActionResult> Create([FromBody] CreateStudent createStudent)
-        //{
-        //    var command = new CreateStudentCommandRequest { CreateStudentDto = createStudent };
-        //    var response = await _mediator.Send(command);
-        //    return Ok(response);
-        //}
+        [HttpPost]
+        public async Task<ActionResult> Create([FromBody] LevelDto level)
+        {
+            var command = new CreateLevelRequest { LevelDto = level };
+            var response = await _mediator.Send(command);
+            return Ok(response);
+        }
 
         //[HttpPut("{id}")]
         //public async Task<ActionResult> Put(Guid id, [FromBody] UpdateStudentDto updateStudentDto)

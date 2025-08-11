@@ -1,6 +1,6 @@
-﻿namespace LMS.ApplicationCore.Dtos.Identity
+﻿namespace LMS.Application.Dtos.Identity
 {
-    public class EmployeeDto:Person_DTO
+    public class EmployeeDto:PersonDto
     {
     }
 }

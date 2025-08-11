@@ -1,4 +1,4 @@
-﻿using LMS.ApplicationCore.Dtos.Education;
+﻿using LMS.Application.Dtos.Education;
 using MediatR;
 
 namespace LMS.Application.Features.Queries.Requests.Education.Level

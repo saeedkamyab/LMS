@@ -1,9 +1,9 @@
 ﻿using LMS.Application.Dtos.Common;
 using System.ComponentModel.DataAnnotations;
 
-namespace LMS.ApplicationCore.Dtos.Identity
+namespace LMS.Application.Dtos.Identity
 {
-    public class Person_DTO : BaseDto
+    public class PersonDto : BaseDto
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;

@@ -1,7 +1,7 @@
 ﻿using LMS.Application.Dtos.Common;
-using LMS.ApplicationCore.Dtos.Identity;
+using LMS.Application.Dtos.Identity;
 
-namespace LMS.ApplicationCore.Dtos.Education
+namespace LMS.Application.Dtos.Education
 {
     public class TermCourseDto: BaseDto
     {

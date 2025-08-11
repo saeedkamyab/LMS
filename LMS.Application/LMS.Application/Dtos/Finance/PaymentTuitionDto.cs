@@ -1,10 +1,10 @@
-﻿using LMS.ApplicationCore.Entities.Common;
-using LMS.ApplicationCore.Entities.Education;
+﻿using LMS.Application.Dtos.Common;
+using LMS.Application.Dtos.Education;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LMS.ApplicationCore.Entities.Finance
+namespace LMS.Application.Dtos.Finance
 {
-    public class PaymentTuitionDto : BaseEntity
+    public class PaymentTuitionDto : BaseDto
     {
         public DateTime PayDate { get; set; }
         public decimal Amount { get; set; }
@@ -13,7 +13,7 @@ namespace LMS.ApplicationCore.Entities.Finance
         #region Relations
         public Guid RegisterId { get; set; }
         [ForeignKey(nameof(RegisterId))]
-        public Register? Register { get; set; }
+        public RegisterDto? Register { get; set; }
         #endregion
     }
 }
