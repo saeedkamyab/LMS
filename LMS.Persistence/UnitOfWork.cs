@@ -10,30 +10,48 @@ namespace LMS.Persistence
     public class UnitOfWork : IUnitOfWork
     {
         private readonly LMSDbContext _context;
+        private IBaseRepository<Level>? _levelRepository;
+        private IBaseRepository<Student>? _studentRepository;
+        private IBaseRepository<Employee>? _employeeRepository;
+        private IBaseRepository<PhoneNumber>? _phoneNumberRepository;
+        private IBaseRepository<Register>? _registerRepository;
+        private IBaseRepository<TermCourse>? _termCourseRepository;
+        private IBaseRepository<TermCourseType>? _termCourseTypeRepository;
+        private IBaseRepository<PaymentTuition>? _paymentTuitionRepository;
 
         public UnitOfWork(LMSDbContext context)
         {
             _context = context;
         }
-        private IBaseRepository<Level>? _levelRepository;
+
         public IBaseRepository<Level> LevelRepository
             => _levelRepository ??= new BaseRepository<Level>(_context);
 
-        public IBaseRepository<Teacher> TeacherRepository => throw new NotImplementedException();
+        public IBaseRepository<Teacher> TeacherRepository
+            => throw new NotImplementedException();
 
-        public IBaseRepository<Student> StudentRepository => throw new NotImplementedException();
+        public IBaseRepository<Student> StudentRepository 
+            => _studentRepository ??= new BaseRepository<Student>(_context);
 
-        public IBaseRepository<Employee> EmployeeRepository => throw new NotImplementedException();
+        public IBaseRepository<Employee> EmployeeRepository 
+            => _employeeRepository ??= new BaseRepository<Employee>(_context);
 
-        public IBaseRepository<PhoneNumber> PhoneNumberRepository => throw new NotImplementedException();
+        public IBaseRepository<PhoneNumber> PhoneNumberRepository 
+            => _phoneNumberRepository ??= new BaseRepository<PhoneNumber>(_context);
 
-        public IBaseRepository<Register> RegisterRepository => throw new NotImplementedException();
+        public IBaseRepository<Register> RegisterRepository
+            => _registerRepository ??= new BaseRepository<Register>(_context);
 
-        public IBaseRepository<TermCourse> TermCourseRepository => throw new NotImplementedException();
+        public IBaseRepository<TermCourse> TermCourseRepository 
+            => _termCourseRepository ??= new BaseRepository<TermCourse>(_context);
 
-        public IBaseRepository<TermCourseType> TermCourseTypeepository => throw new NotImplementedException();
+        public IBaseRepository<TermCourseType> TermCourseTypeepository
+            => _termCourseTypeRepository ??= new BaseRepository<TermCourseType>(_context);
 
-        public IBaseRepository<PaymentTuition> PaymentTuitionRepository => throw new NotImplementedException();
+        public IBaseRepository<PaymentTuition> PaymentTuitionRepository 
+            => _paymentTuitionRepository ??= new BaseRepository<PaymentTuition>(_context);
+
+       
 
         public async Task<int> CommitAsync()
         {

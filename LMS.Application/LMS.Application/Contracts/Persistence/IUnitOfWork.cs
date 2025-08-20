@@ -21,10 +21,11 @@ namespace LMS.Application.Contracts.Persistence
         IBaseRepository<TermCourseType> TermCourseTypeepository { get; }
 
         #endregion
-       
+
         #region Finance
         IBaseRepository<PaymentTuition> PaymentTuitionRepository { get; }
         #endregion
         Task<int> CommitAsync();
+
     }
 }
