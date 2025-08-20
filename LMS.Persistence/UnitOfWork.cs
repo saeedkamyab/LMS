@@ -10,48 +10,75 @@ namespace LMS.Persistence
     public class UnitOfWork : IUnitOfWork
     {
         private readonly LMSDbContext _context;
-        private IBaseRepository<Level>? _levelRepository;
+
+        #region Fields -----------------------------------------------------------
+        
+        #region Identity
         private IBaseRepository<Student>? _studentRepository;
+        private IBaseRepository<Teacher>? _teacherRepository;
         private IBaseRepository<Employee>? _employeeRepository;
         private IBaseRepository<PhoneNumber>? _phoneNumberRepository;
+        #endregion
+
+        #region Education
+        private IBaseRepository<Level>? _levelRepository;
         private IBaseRepository<Register>? _registerRepository;
         private IBaseRepository<TermCourse>? _termCourseRepository;
         private IBaseRepository<TermCourseType>? _termCourseTypeRepository;
+
+        #endregion
+
+        #region Finance
         private IBaseRepository<PaymentTuition>? _paymentTuitionRepository;
+        #endregion
+        #endregion
 
-        public UnitOfWork(LMSDbContext context)
-        {
-            _context = context;
-        }
+        #region Properties -------------------------------------------------------
+       
+        #region Identity
+        public IBaseRepository<Teacher> TeacherRepository
+             => throw new NotImplementedException();
 
+        public IBaseRepository<Student> StudentRepository
+            => _studentRepository ??= new BaseRepository<Student>(_context);
+
+        public IBaseRepository<Employee> EmployeeRepository
+            => _employeeRepository ??= new BaseRepository<Employee>(_context);
+
+        public IBaseRepository<PhoneNumber> PhoneNumberRepository
+            => _phoneNumberRepository ??= new BaseRepository<PhoneNumber>(_context);
+
+        #endregion
+
+        #region Education
         public IBaseRepository<Level> LevelRepository
             => _levelRepository ??= new BaseRepository<Level>(_context);
 
-        public IBaseRepository<Teacher> TeacherRepository
-            => throw new NotImplementedException();
-
-        public IBaseRepository<Student> StudentRepository 
-            => _studentRepository ??= new BaseRepository<Student>(_context);
-
-        public IBaseRepository<Employee> EmployeeRepository 
-            => _employeeRepository ??= new BaseRepository<Employee>(_context);
-
-        public IBaseRepository<PhoneNumber> PhoneNumberRepository 
-            => _phoneNumberRepository ??= new BaseRepository<PhoneNumber>(_context);
 
         public IBaseRepository<Register> RegisterRepository
             => _registerRepository ??= new BaseRepository<Register>(_context);
 
-        public IBaseRepository<TermCourse> TermCourseRepository 
+        public IBaseRepository<TermCourse> TermCourseRepository
             => _termCourseRepository ??= new BaseRepository<TermCourse>(_context);
 
         public IBaseRepository<TermCourseType> TermCourseTypeepository
             => _termCourseTypeRepository ??= new BaseRepository<TermCourseType>(_context);
 
-        public IBaseRepository<PaymentTuition> PaymentTuitionRepository 
-            => _paymentTuitionRepository ??= new BaseRepository<PaymentTuition>(_context);
+        #endregion
 
+        #region Finance
+        public IBaseRepository<PaymentTuition> PaymentTuitionRepository
+           => _paymentTuitionRepository ??= new BaseRepository<PaymentTuition>(_context);
+
+
+        #endregion
+
+        #endregion
        
+        public UnitOfWork(LMSDbContext context)
+        {
+            _context = context;
+        }
 
         public async Task<int> CommitAsync()
         {
