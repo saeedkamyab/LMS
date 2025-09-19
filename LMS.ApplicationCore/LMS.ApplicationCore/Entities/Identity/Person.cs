@@ -1,6 +1,7 @@
 ﻿using LMS.ApplicationCore.Entities.Common;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Security;
 
 namespace LMS.ApplicationCore.Entities.Identity
 {
@@ -18,6 +19,11 @@ namespace LMS.ApplicationCore.Entities.Identity
         public DateTime BrithDate { get; set; }
         [StringLength(300)]
         public string? Address { get; set; }
+        [StringLength(150)]
+        public string? UserName { get; set; }
+        [StringLength(150)]
+        public string? Password { get; set; }
+        public bool IsActive { get; set; }
 
         public List<PhoneNumber>? PhoneNumbers { get; set; }
     }
