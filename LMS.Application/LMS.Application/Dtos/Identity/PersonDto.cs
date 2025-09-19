@@ -11,7 +11,10 @@ namespace LMS.Application.Dtos.Identity
         public string? NationalCode { get; set; }
         public DateTime BrithDate { get; set; }
         public string? Address { get; set; }
-
+        public string? UserName { get; set; }
+        public string? Password { get; set; }
+        public bool IsActive { get; set; }
+        
         public List<PhoneNumberDto>? PhoneNumbers { get; set; }
     }
 }

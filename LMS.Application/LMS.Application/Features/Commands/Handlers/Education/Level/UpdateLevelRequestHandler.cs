@@ -6,25 +6,25 @@ using MediatR;
 
 namespace LMS.Application.Features.Commands.Handlers.Education.Level
 {
-    public class CreateLevelRequestHandler : IRequestHandler<CreateLevelRequest, LevelDto>
+    public class UpdateLevelRequestHandler : IRequestHandler<UpdateLevelRequest, LevelDto>
     {
         IUnitOfWork _unitOfWork;
         IMapper _mapper;
 
-        public CreateLevelRequestHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public UpdateLevelRequestHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<LevelDto> Handle(CreateLevelRequest request, CancellationToken cancellationToken)
+        public async Task<LevelDto> Handle(UpdateLevelRequest request, CancellationToken cancellationToken)
         {
             try
             {
                 var level = _mapper.Map<LMS.ApplicationCore.Entities.Education.Level>(request.LevelDto);
-                var res = await _unitOfWork.LevelRepository.AddAsync(level);
-                return _mapper.Map<LevelDto>(res);
+                var res = _mapper.Map<LevelDto>(level);
+                return res;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 return new();
             }
