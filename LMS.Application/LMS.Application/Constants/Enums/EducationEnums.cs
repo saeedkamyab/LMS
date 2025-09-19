@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMS.Application.Constants.Enums
 {
-    public enum ClassType
+    public enum ClassType:byte
     {
         None = 0,
         PrivateNormal = 1,
@@ -14,7 +14,7 @@ namespace LMS.Application.Constants.Enums
         PublicNormal = 3,
         PublicCompact = 4
     }
-    public enum TuitionPayType
+    public enum TuitionPayType : byte
     {
         None = 0,
         Installment = 1,
