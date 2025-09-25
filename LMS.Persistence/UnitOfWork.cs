@@ -61,7 +61,7 @@ namespace LMS.Persistence
         public IBaseRepository<TermCourse> TermCourseRepository
             => _termCourseRepository ??= new BaseRepository<TermCourse>(_context);
 
-        public IBaseRepository<TermCourseType> TermCourseTypeepository
+        public IBaseRepository<TermCourseType> TermCourseTypeRepository
             => _termCourseTypeRepository ??= new BaseRepository<TermCourseType>(_context);
 
         #endregion
