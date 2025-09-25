@@ -18,7 +18,7 @@ namespace LMS.Application.Contracts.Persistence
         IBaseRepository<Level> LevelRepository { get; }
         IBaseRepository<Register> RegisterRepository { get; }
         IBaseRepository<TermCourse> TermCourseRepository { get; }
-        IBaseRepository<TermCourseType> TermCourseTypeepository { get; }
+        IBaseRepository<TermCourseType> TermCourseTypeRepository { get; }
 
         #endregion
 
