@@ -4,7 +4,7 @@ using LMS.Application.Constants.MessageText;
 using LMS.Application.Contracts.Persistence;
 using LMS.Application.Dtos.Common;
 using LMS.Application.Dtos.Finance.Validations;
-using LMS.Application.Features.Commands.Requests.Finance.PaymentTuition;
+using LMS.Application.Features.Commands.Handlers.Finance.PaymentTuition.Requests;
 using MediatR;
 
 namespace LMS.Application.Features.Commands.Handlers.Education.PaymentTuition

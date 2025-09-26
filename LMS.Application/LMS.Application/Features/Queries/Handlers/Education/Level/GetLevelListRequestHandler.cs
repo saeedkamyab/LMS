@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using LMS.Application.Contracts.Persistence;
-using LMS.Application.Features.Queries.Requests.Education.Level;
 using LMS.Application.Dtos.Education;
 using MediatR;
+using LMS.Application.Features.Queries.Handlers.Education.Level.Requests;
 
 namespace LMS.Application.Features.Queries.Handlers.Education.Level
 {

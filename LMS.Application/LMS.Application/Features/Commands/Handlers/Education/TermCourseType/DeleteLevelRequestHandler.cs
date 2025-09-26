@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using LMS.Application.Contracts.Persistence;
-using LMS.Application.Features.Commands.Requests.Education.TermCourseType;
 using LMS.Application.Dtos.Education;
 using MediatR;
 using LMS.Application.Dtos.Common;
 using LMS.Application.Constants.Enums;
 using LMS.Application.Constants.MessageText;
+using LMS.Application.Features.Commands.Handlers.Education.TermCourseType.Requests;
 
 namespace LMS.Application.Features.Commands.Handlers.Education.TermCourseType
 {

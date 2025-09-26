@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using LMS.Application.Contracts.Persistence;
-using LMS.Application.Features.Commands.Requests.Identity.Student;
 using LMS.Application.Dtos.Identity;
 using MediatR;
 using LMS.Application.Dtos.Common;
 using LMS.Application.Constants.Enums;
 using LMS.Application.Constants.MessageText;
+using LMS.Application.Features.Commands.Handlers.Identity.Student.Requests;
 
 namespace LMS.Application.Features.Commands.Handlers.Identity.Student
 {

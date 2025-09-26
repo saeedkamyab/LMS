@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using LMS.Application.Contracts.Persistence;
-using LMS.Application.Features.Commands.Requests.Finance.PaymentTuition;
 using LMS.Application.Dtos.Finance;
 using MediatR;
 using LMS.Application.Dtos.Common;
 using LMS.Application.Constants.Enums;
 using LMS.Application.Constants.MessageText;
+using LMS.Application.Features.Commands.Handlers.Finance.PaymentTuition.Requests;
 
 namespace LMS.Application.Features.Commands.Handlers.Finance.PaymentTuition
 {

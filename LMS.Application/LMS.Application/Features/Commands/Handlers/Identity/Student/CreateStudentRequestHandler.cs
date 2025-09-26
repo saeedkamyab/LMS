@@ -4,7 +4,7 @@ using LMS.Application.Constants.MessageText;
 using LMS.Application.Contracts.Persistence;
 using LMS.Application.Dtos.Common;
 using LMS.Application.Dtos.Identity.Validations;
-using LMS.Application.Features.Commands.Requests.Identity.Student;
+using LMS.Application.Features.Commands.Handlers.Identity.Student.Requests;
 using MediatR;
 
 namespace LMS.Application.Features.Commands.Handlers.Identity.Student
