@@ -1,8 +1,8 @@
-﻿using LMS.Application.Features.Queries.Requests.Education.Level;
+﻿using LMS.Application.Features.Queries.Requests_Handlers.Education.Level.Requests;
 using LMS.Application.Dtos.Education;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using LMS.Application.Features.Commands.Requests.Education.Level;
+using LMS.Application.Features.Commands.Requests_Handlers.Education.Level.Requests;
 namespace LMS.Api.Controllers.Education
 {
     [Route("api/[controller]")]

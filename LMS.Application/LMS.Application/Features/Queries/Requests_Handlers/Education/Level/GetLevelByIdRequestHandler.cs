@@ -2,9 +2,9 @@
 using LMS.Application.Contracts.Persistence;
 using LMS.Application.Dtos.Education;
 using MediatR;
-using LMS.Application.Features.Queries.Handlers.Education.Level.Requests;
+using LMS.Application.Features.Queries.Requests_Handlers.Education.Level.Requests;
 
-namespace LMS.Application.Features.Queries.Handlers.Education.Level
+namespace LMS.Application.Features.Queries.Requests_Handlers.Education.Level
 {
     public class GetLevelByIdRequestHandler : IRequestHandler<GetLevelByIdRequest, LevelDto>
     {
