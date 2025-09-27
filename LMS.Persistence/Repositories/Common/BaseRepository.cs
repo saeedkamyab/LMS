@@ -27,7 +27,7 @@ namespace LMS.Persistence.Repositories.Common
         }
         public async Task<IReadOnlyList<T>> GetAllAsync()
         {
-            var entities = await _dbSet.ToListAsync();
+            var entities = await _dbSet.Where(x=>x.IsDeleted!=true).ToListAsync();
             if (entities == null)
             {
                 throw new KeyNotFoundException();

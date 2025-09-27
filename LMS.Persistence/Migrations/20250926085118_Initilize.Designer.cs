@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Persistence.Migrations
 {
     [DbContext(typeof(LMSDbContext))]
-    [Migration("20250809180634_init")]
-    partial class init
+    [Migration("20250926085118_Initilize")]
+    partial class Initilize
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -251,6 +251,9 @@ namespace LMS.Persistence.Migrations
                         .HasMaxLength(130)
                         .HasColumnType("nvarchar(130)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -265,6 +268,14 @@ namespace LMS.Persistence.Migrations
                     b.Property<string>("NationalCode")
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Password")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("Id");
 
@@ -340,7 +351,7 @@ namespace LMS.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("LMS.ApplicationCore.Entities.Education.TermCourse", "TermCourse")
-                        .WithMany()
+                        .WithMany("Registers")
                         .HasForeignKey("TermCourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -427,6 +438,11 @@ namespace LMS.Persistence.Migrations
                         .HasForeignKey("LMS.ApplicationCore.Entities.Identity.Teacher", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("LMS.ApplicationCore.Entities.Education.TermCourse", b =>
+                {
+                    b.Navigation("Registers");
                 });
 
             modelBuilder.Entity("LMS.ApplicationCore.Entities.Education.TermCourseType", b =>

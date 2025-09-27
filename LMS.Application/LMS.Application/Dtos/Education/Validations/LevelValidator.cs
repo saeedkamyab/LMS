@@ -9,7 +9,7 @@ namespace LMS.Application.Dtos.Education.Validations
             RuleFor(item => item.Title)
                 .NotEmpty().WithMessage("وارد کردن عنوان ضروری می باشد")
                 .NotNull().WithMessage("وارد کردن عنوان  ضروری می باشد")
-                .Length(130).WithMessage("عنوان نمیتواند بیش از 130 کاراکتر باشد");
+                .MaximumLength(130).WithMessage("عنوان نمیتواند بیش از 130 کاراکتر باشد");
         }
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LMS.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class Initilize : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,6 +49,9 @@ namespace LMS.Persistence.Migrations
                     NationalCode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     BrithDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
+                    UserName = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -230,14 +233,14 @@ namespace LMS.Persistence.Migrations
                         principalSchema: "Identity",
                         principalTable: "Student",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Register_TermCourse_TermCourseId",
                         column: x => x.TermCourseId,
                         principalSchema: "Education",
                         principalTable: "TermCourse",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

@@ -38,6 +38,7 @@ namespace LMS.Application.Features.Commands.Requests_Handlers.Education.Level
             {
                 var level = _mapper.Map<LMS.ApplicationCore.Entities.Education.Level>(request.LevelDto);
                 await _unitOfWork.LevelRepository.AddAsync(level);
+                await _unitOfWork.CommitAsync();
                 return new BaseCommandResponse
                 {
                     Status = ResponseStatusCodes.Success,

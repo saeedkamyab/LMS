@@ -37,7 +37,7 @@ namespace LMS.Persistence
        
         #region Identity
         public IBaseRepository<Teacher> TeacherRepository
-             => throw new NotImplementedException();
+              => _teacherRepository ??= new BaseRepository<Teacher>(_context);
 
         public IBaseRepository<Student> StudentRepository
             => _studentRepository ??= new BaseRepository<Student>(_context);

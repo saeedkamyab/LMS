@@ -32,6 +32,7 @@ namespace LMS.Application.Features.Commands.Requests_Handlers.Education.Level
                     };
                 }
                 var res = await _unitOfWork.LevelRepository.TrashAsync(level);
+                await _unitOfWork.CommitAsync();
                 return new BaseCommandResponse()
                 {
                     Status = ResponseStatusCodes.Success,

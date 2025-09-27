@@ -3,6 +3,7 @@ using LMS.Application.Dtos.Education;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using LMS.Application.Features.Commands.Requests_Handlers.Education.Level.Requests;
+using Azure;
 namespace LMS.Api.Controllers.Education
 {
     [Route("api/[controller]")]
@@ -36,21 +37,21 @@ namespace LMS.Api.Controllers.Education
             return Ok(response);
         }
 
-        //[HttpPut("{id}")]
-        //public async Task<ActionResult> Put(Guid id, [FromBody] UpdateStudentDto updateStudentDto)
-        //{
-        //    var command = new UpdateStudentCommandRequest { Id = id, UpdateStudentDto = updateStudentDto };
-        //    await _mediator.Send(command);
-        //    return NoContent();
-        //}
+        [HttpPut]
+        public async Task<ActionResult> Update([FromBody] LevelDto level)
+        {
+            var command = new UpdateLevelRequest { LevelDto = level };
+            var response = await _mediator.Send(command);
+            return Ok(response);
+        }
 
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult> Delete(Guid id)
-        //{
-        //    var command = new DeleteStudentRequestCommand { Id = id };
-        //    await _mediator.Send(command);
-        //    return NoContent();
-        //}
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            var command = new DeleteLevelRequest { Id = id };
+            var response = await _mediator.Send(command);
+            return Ok(response);
+        }
 
     }
 }
