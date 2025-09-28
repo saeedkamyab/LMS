@@ -16,7 +16,16 @@ namespace LMS.Api.Controllers.Education
         {
             _mediator = mediator;
         }
+        /// <summary>
+        /// گرفتن لیست تمام کاربران
+        /// </summary>
+        /// <remarks>
+        /// مثال:
+        /// GET /api/users
+        /// </remarks>
+        /// <response code="200">لیست کاربران با موفقیت برگشت داده شد</response>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new GetLevelListRequest());
