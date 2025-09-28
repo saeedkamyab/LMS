@@ -1,10 +1,10 @@
-﻿using LMS.Application.Features.Queries.Requests_Handlers.Education.PaymentTuition.Requests;
-using LMS.Application.Dtos.Education;
+﻿using LMS.Application.Features.Queries.Requests_Handlers.Finance.PaymentTuition.Requests;
+using LMS.Application.Dtos.Finance;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using LMS.Application.Features.Commands.Requests_Handlers.Education.PaymentTuition.Requests;
+using LMS.Application.Features.Commands.Requests_Handlers.Finance.PaymentTuition.Requests;
 using Azure;
-namespace LMS.Api.Controllers.Education
+namespace LMS.Api.Controllers.Finance
 {
     [Route("api/[controller]")]
     [ApiController]

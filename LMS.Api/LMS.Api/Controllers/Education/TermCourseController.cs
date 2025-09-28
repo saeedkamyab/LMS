@@ -8,7 +8,7 @@ namespace LMS.Api.Controllers.Education
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LevelController : ControllerBase
+    public class TermCourseController : ControllerBase
     {
         protected readonly IMediator _mediator;
 

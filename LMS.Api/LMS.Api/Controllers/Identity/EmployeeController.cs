@@ -1,10 +1,10 @@
-﻿using LMS.Application.Features.Queries.Requests_Handlers.Education.Employee.Requests;
-using LMS.Application.Dtos.Education;
+﻿using LMS.Application.Features.Queries.Requests_Handlers.Identity.Employee.Requests;
+using LMS.Application.Dtos.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using LMS.Application.Features.Commands.Requests_Handlers.Education.Employee.Requests;
+using LMS.Application.Features.Commands.Requests_Handlers.Identity.Employee.Requests;
 using Azure;
-namespace LMS.Api.Controllers.Education
+namespace LMS.Api.Controllers.Identity
 {
     [Route("api/[controller]")]
     [ApiController]
